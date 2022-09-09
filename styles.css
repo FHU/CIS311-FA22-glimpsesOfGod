@@ -1,0 +1,92 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    transition: all 400ms;
+}
+
+.page.active {
+    left: 250px;
+}
+
+header {
+    z-index: 4;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-icon {
+    padding:1rem;
+}
+
+.nav-icon #menu-icon, 
+.nav-icon.active #close-icon {
+    display: block;
+}
+
+.nav-icon.active #menu-icon,
+.nav-icon #close-icon {
+    display: none;
+}
+
+.menu {
+    position: fixed;
+    left:0;
+    top:0%;
+    height: 100%;
+    width: 250px;
+    display: flex;
+    align-items: center;
+
+   transform: translateX(-250px);
+   transition: all 400ms;
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+
+
+.hero {
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero video {
+    position: absolute;
+    z-index: -1;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .overlay {
+    position: absolute;
+    z-index: 0;
+    width:100%;
+    height: 100%;
+    /* background-color: rgba(0,0,0,0.2); */
+    mix-blend-mode: lighten;
+}
+
